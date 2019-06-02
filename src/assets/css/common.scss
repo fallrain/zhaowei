@@ -254,7 +254,6 @@
 
 /*公共*/
 .app-container {
-  min-height: calc(100vh - 50px);
   border: 0.1px solid transparent;
 }
 
@@ -639,6 +638,7 @@
 
   .val3 {
     font-size: 24px;
+
     .blue {
       color: #00B3FE;
     }
@@ -650,3 +650,166 @@
 }
 
 /*开幕式 end*/
+
+/*导航*/
+.navation-par {
+  background: #EFEFF4;
+  min-height: 100vh;
+}
+
+.navgation-tab-par {
+  padding: 10px 15px;
+
+  .HButtonTab-list-item {
+    background: #D9D8D8;
+    border-radius: 5px 5px 0 0;
+    color: #666;
+    height: 40px;
+    line-height: 40px;
+    border: 0;
+
+    &.active {
+      background: #2359A9;
+      color: #fff;
+    }
+
+    &:first-child {
+      margin-right: 5px;
+      border-bottom-left-radius: 0;
+    }
+
+    &:last-child {
+      border-bottom-right-radius: 0;
+    }
+  }
+}
+
+.navgation-main {
+  position: absolute;
+  top: 67px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  text-align: center;
+  min-height: calc(100vh - 67px);
+
+  .img1 {
+    margin-top: 50px;
+    width: 345px;
+    height: 297px;
+  }
+
+  .img2 {
+    width: 345px;
+    height: 537px;
+  }
+}
+
+.btm-img-par {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+
+  img {
+    width: 100%;
+    height: 260px;
+  }
+}
+
+.navgation-switch {
+  display: flex;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 10px;
+}
+
+.navgation-switch-item {
+  font-size: 12px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #00B3FE;
+  color: #00B3FE;
+  border-radius: 100%;
+  margin-right: 12px;
+
+  &.active {
+    border: 0;
+    background: #00B3FE;
+    color: #fff;
+  }
+}
+
+/*导航 end*/
+
+/*日程安排*/
+.schedule-par {
+  min-height: 100vh;
+  background: #EFEFF4;
+  padding-top: 22px;
+}
+
+.schedule-item {
+  margin-bottom: 22px;
+
+  .title {
+    width: 135px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    background: rgba(3, 161, 226, 1);
+    border-radius: 0 20px 20px 0;
+  }
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+.time-line {
+  position: relative;
+  margin-top: 14px;
+  padding-left: 80px;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 40px;
+    width: 5px;
+    height: 100%;
+    background: rgba(3, 161, 226, 1);
+    border-radius: 3px;
+  }
+}
+
+.time-line-item {
+  margin-top: 36px;
+  position: relative;
+  .iconfont {
+    position: absolute;
+    font-size: 30px;
+    top: 10px;
+    left: -53px;
+    color: #659506;
+    background: #EFEFF4;
+  }
+
+  .time {
+    margin-top: 10px;
+    font-size: 14px;
+    color: rgba(153, 153, 153, 1);
+    line-height: 19px;
+  }
+
+  .cnt {
+    font-size: 16px;
+    color: rgba(51, 51, 51, 1);
+    line-height: 19px;
+  }
+}
+
+/*日程安排 end*/

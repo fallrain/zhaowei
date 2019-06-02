@@ -3,6 +3,8 @@ import Nav from '@/view/Nav';
 const SignUp = () => import(/* webpackChunkName: "PaymentHome" */ '@/view/signUp/SignUp');
 const SignUpSuc = () => import(/* webpackChunkName: "PaymentHome" */ '@/view/signUp/SignUpSuc');
 const OpeningCeremony = () => import(/* webpackChunkName: "OpeningCeremony" */ '@/view/openingCeremony/OpeningCeremony');
+const Navgation = () => import(/* webpackChunkName: "Navgation" */ '@/view/navgation/Navgation');
+const Schedule = () => import(/* webpackChunkName: "Schedule" */ '@/view/schedule/Schedule');
 
 let data = [
   {
@@ -27,6 +29,22 @@ let data = [
     component: OpeningCeremony,
     meta: {
       title: '开幕式'
+    }
+  },
+  {
+    path: '/navgation',
+    name: 'Navgation',
+    component: Navgation,
+    meta: {
+      title: '展会导航'
+    }
+  },
+  {
+    path: '/schedule',
+    name: 'Schedule',
+    component: Schedule,
+    meta: {
+      title: '日程安排'
     }
   }
 ];
