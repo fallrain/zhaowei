@@ -129,9 +129,7 @@ let util = {
   }
 };
 util.setUserInfToStorage = function () {
-  localStorage.setItem('uid', util.getUrlVal('uid') || '');
-  localStorage.setItem('nickname', util.getUrlVal('nickname') || '');
-  localStorage.setItem('headimg', util.getUrlVal('headimg') || '');
+  localStorage.setItem('openId', util.getUrlVal('openid') || '');
 };
 
 export default util;

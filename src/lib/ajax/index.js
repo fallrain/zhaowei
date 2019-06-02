@@ -1,10 +1,7 @@
 import Vue from 'vue';
 import ax from 'axios';
-import store from '@/store';
-import {
-  LoadingPlugin,
-  ToastPlugin
-} from 'vux';
+import {LoadingPlugin, ToastPlugin} from 'vux';
+
 Vue.use(LoadingPlugin);
 Vue.use(ToastPlugin);
 
@@ -22,10 +19,11 @@ ax.interceptors.request.use(config => {
   if (!config.params) {
     config.params = {};
   }
-  if (!config.params.j_sub_system) {
-    const simpleCodeKeyName = store.state.curRole === 'property' ? 'propertySimpleCode' : 'ownerSimpleCode';
-    config.params.j_sub_system = sessionStorage.getItem(simpleCodeKeyName) || undefined;
+  if (!config.data) {
+    config.data = {};
   }
+  config.params.openid = localStorage.getItem('openId');
+  config.data.openid = localStorage.getItem('openId');
   Vue.$vux.loading.show();
   return config;
 });
@@ -43,6 +41,7 @@ ax.interceptors.response.use(function (response) {
 
   return response.data;
 }, function (error) {
+  ;
   Vue.$vux.loading.hide();
   // return Promise.reject(error);
   Vue.$vux.toast.show({
@@ -66,9 +65,20 @@ const axPost = function (url, data, params) {
   return ax({
     url: url,
     data: data,
+    params: params,
+    headers: {
+      'content-type': 'application/x-www-form-urlencoded'
+    }
+  });
+};
+
+const axPostJson = function (url, data, params) {
+  return ax({
+    url: url,
+    data: data,
     params: params
   });
 };
 export default ax;
 
-export {axGet, axPost};
+export {axGet, axPost, axPostJson};

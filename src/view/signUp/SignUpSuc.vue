@@ -12,19 +12,19 @@
         <ol>
           <li class="signSuc-item">
             <label class="signSuc-item-name">姓名：</label>
-            <span>李学猫</span>
+            <span>{{form.name}}</span>
           </li>
           <li class="signSuc-item">
             <label class="signSuc-item-name">单位：</label>
-            <span>建投数据科技（山东）有限公司</span>
+            <span>{{form.companyName}}</span>
           </li>
           <li class="signSuc-item">
             <label class="signSuc-item-name">编号：</label>
-            <span>00004</span>
+            <span>{{form.userCode}}</span>
           </li>
         </ol>
         <div class="signSuc-img-par">
-          <img class="signSuc-img">
+          <img class="signSuc-img" :src="form.qrCodePath">
         </div>
       </div>
     </div>
@@ -50,82 +50,26 @@ export default {
     return {
       form: {
         name: '',
-        phone: '',
-        work: '',
-        duty: '',
-        filed: '',
-        company: ''
-      },
-      filedList: [
-        {
-          label: '1.人工智能'
-        },
-        {
-          label: '2.工业互联网'
-        },
-        {
-          label: '3.工业软件/工业APP'
-        },
-        {
-          label: '4.智慧城市'
-        },
-        {
-          label: '5.大数据和云计算'
-        },
-        {
-          label: '6.移动通信'
-        },
-        {
-          label: '7.虚拟现实'
-        },
-        {
-          label: '8.信息安全'
-        },
-        {
-          label: '9.物联网'
-        },
-        {
-          label: '10.3D打印'
-        },
-        {
-          label: '11.区块链'
-        },
-        {
-          label: '12.IC设计'
-        },
-        {
-          label: '13.海洋信息'
-        }
-      ],
-      filedVals: [],
-      companyList: [
-        {
-          label: '1.海尔'
-        },
-        {
-          label: '2.海信'
-        },
-        {
-          label: '3.华通'
-        },
-        {
-          label: '4.ABB'
-        },
-        {
-          label: '5.华录'
-        },
-        {
-          label: '6.东华'
-        },
-        {
-          label: '7.建投'
-        },
-        {
-          label: '8.其他'
-        }
-      ],
-      companyVals: []
+        companyName: '',
+        userCode: '',
+        qrCodePath: ''
+      }
     };
+  },
+  created () {
+    this.getOneSignUpInfo();
+  },
+  methods: {
+    async getOneSignUpInfo () {
+      const {code, value} = await this.axPostJson('signUp/getOneSignUpInfo');
+      if (code === '200') {
+        const content = value.content;
+        this.form.name = content.name;
+        this.form.companyName = content.companyName;
+        this.form.userCode = content.userCode;
+        this.form.qrCodePath = 'http://rbhmgr.nonggaogroup.com/filetemp/' + content.qrCodePath;
+      }
+    }
   }
 };
 </script>

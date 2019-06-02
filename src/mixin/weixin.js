@@ -1,7 +1,7 @@
 export default {
   methods: {
     getSdkCfg () {
-      /*return this.axPost(
+      /* return this.axPost(
         'wx/mp/jssdk/signature',
         null,
         {
@@ -23,7 +23,7 @@ export default {
           this.$wechat.ready(() => {
           });
         }
-      });*/
+      }); */
     }
   }
 };

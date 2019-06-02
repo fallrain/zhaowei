@@ -5,16 +5,21 @@ export default {
     },
     objRequired (val, deepName) {
       // deepName: 'parent.child.value'
-      deepName.split('.').forEach(function (key) {
-        val = val[key];
-      });
+      if (deepName && deepName !== true) {
+        deepName.split('.').forEach(function (key) {
+          val = val[key];
+        });
+      }
+
       return val != null && /\S+/.test(val);
     },
     arrayRequired (val, deepName) {
       // deepName: 'parent.child.value'
-      deepName.split('.').forEach(function (key) {
-        val = val[key];
-      });
+      if (deepName && deepName !== true) {
+        deepName.split('.').forEach(function (key) {
+          val = val[key];
+        });
+      }
       return val && val.length;
     },
     number (val) {

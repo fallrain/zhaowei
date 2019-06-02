@@ -5,10 +5,10 @@
         class="HCheckbox-item"
         v-for="(item,i) in data"
         :key="i"
-        @click="checkboxClick(i)"
+        @click="checkboxClick(item.id)"
       >
         <i
-          :class="['HCheckbox-icon','iconfont',value.some(v=>v===i)?'icon-guifanduoxuanxuanzhong':'icon-guifanduoxuanweixuanzhong']"></i>
+          :class="['HCheckbox-icon','iconfont',value.some(v=>v===item.id)?'icon-guifanduoxuanxuanzhong':'icon-guifanduoxuanweixuanzhong']"></i>
         <span class="HCheckbox-cnt">{{item.label}}</span>
       </li>
     </ol>

@@ -5,7 +5,7 @@ import App from './App';
 import router from './router';
 import filtersMap from './filter';
 // import mixin from './mixin';
-import ax, {axGet, axPost} from '@/lib/ajax';
+import ax, {axGet, axPost, axPostJson} from '@/lib/ajax';
 import util from '@/lib/util/util';
 import hValidate from '@/lib/hValidate/hValidate';
 import store from './store';
@@ -15,7 +15,7 @@ import {
   ConfirmPlugin
 } from 'vux';
 // 跳转回来的时候，重置uid等信息
-if (util.getUrlVal('uid')) {
+if (util.getUrlVal('openid')) {
   util.setUserInfToStorage();
 }
 Vue.use(AlertPlugin);
@@ -33,6 +33,7 @@ Object.keys(filtersMap).forEach(filterName => {
 Vue.prototype.ax = ax;
 Vue.prototype.axGet = axGet;
 Vue.prototype.axPost = axPost;
+Vue.prototype.axPostJson = axPostJson;
 Vue.prototype.hUtil = util;
 Vue.prototype.HValidate = hValidate;
 
