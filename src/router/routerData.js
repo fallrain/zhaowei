@@ -6,6 +6,7 @@ const OpeningCeremony = () => import(/* webpackChunkName: "OpeningCeremony" */ '
 const Navgation = () => import(/* webpackChunkName: "Navgation" */ '@/view/navgation/Navgation');
 const Schedule = () => import(/* webpackChunkName: "Schedule" */ '@/view/schedule/Schedule');
 const Introduction = () => import(/* webpackChunkName: "Introduction" */ '@/view/introduction/Introduction');
+const CompanyIntroduction = () => import(/* webpackChunkName: "CompanyIntroduction" */ '@/view/introduction/CompanyIntroduction');
 
 let data = [
   {
@@ -54,6 +55,14 @@ let data = [
     component: Introduction,
     meta: {
       title: '展区介绍'
+    }
+  },
+  {
+    path: '/companyIntroduction',
+    name: 'CompanyIntroduction',
+    component: CompanyIntroduction,
+    meta: {
+      title: '参展企业'
     }
   }
 ];
