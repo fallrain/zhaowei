@@ -5,6 +5,7 @@ const SignUpSuc = () => import(/* webpackChunkName: "PaymentHome" */ '@/view/sig
 const OpeningCeremony = () => import(/* webpackChunkName: "OpeningCeremony" */ '@/view/openingCeremony/OpeningCeremony');
 const Navgation = () => import(/* webpackChunkName: "Navgation" */ '@/view/navgation/Navgation');
 const Schedule = () => import(/* webpackChunkName: "Schedule" */ '@/view/schedule/Schedule');
+const Introduction = () => import(/* webpackChunkName: "Introduction" */ '@/view/introduction/Introduction');
 
 let data = [
   {
@@ -45,6 +46,14 @@ let data = [
     component: Schedule,
     meta: {
       title: '日程安排'
+    }
+  },
+  {
+    path: '/introduction',
+    name: 'Introduction',
+    component: Introduction,
+    meta: {
+      title: '展区介绍'
     }
   }
 ];

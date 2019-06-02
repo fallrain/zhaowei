@@ -764,7 +764,8 @@
     background: rgba(3, 161, 226, 1);
     border-radius: 0 20px 20px 0;
   }
-  &:last-child{
+
+  &:last-child {
     margin-bottom: 0;
   }
 }
@@ -789,6 +790,7 @@
 .time-line-item {
   margin-top: 36px;
   position: relative;
+
   .iconfont {
     position: absolute;
     font-size: 30px;
@@ -813,3 +815,55 @@
 }
 
 /*日程安排 end*/
+
+/*展区介绍*/
+.introduction-item {
+  padding: 22px 15px;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.introduction-item-title {
+  position: relative;
+  margin: auto;
+  width: 250px;
+  height: 46px;
+  text-align: center;
+
+  .num {
+  }
+
+  .cnt {
+    line-height: 19px;
+    font-size: 15px;
+  }
+
+  &.type1 {
+    background: url('~@/assets/img/jieshaotou1.png') no-repeat;
+    background-size: 100% 100%;
+    color: #2359A9;
+  }
+
+  &.type2 {
+    background: url('~@/assets/img/jieshaotou2.png') no-repeat;
+    background-size: 100% 100%;
+    color: #00B3FE;
+  }
+
+  &.type3 {
+    background: url('~@/assets/img/jieshaotou3.png') no-repeat;
+    background-size: 100% 100%;
+    color: #7DA63E;
+  }
+}
+
+.introduction-item-cnt {
+  margin-top: 20px;
+  font-size: 13px;
+  color: rgba(102, 102, 102, 1);
+  line-height: 21px;
+  text-indent: 2em;
+  text-align: left;
+}
+
+/*展区介绍 end*/
