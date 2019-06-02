@@ -2,6 +2,7 @@ import Nav from '@/view/Nav';
 
 const SignUp = () => import(/* webpackChunkName: "PaymentHome" */ '@/view/signUp/SignUp');
 const SignUpSuc = () => import(/* webpackChunkName: "PaymentHome" */ '@/view/signUp/SignUpSuc');
+const OpeningCeremony = () => import(/* webpackChunkName: "OpeningCeremony" */ '@/view/openingCeremony/OpeningCeremony');
 
 let data = [
   {
@@ -18,6 +19,14 @@ let data = [
     component: SignUpSuc,
     meta: {
       title: '报名确认'
+    }
+  },
+  {
+    path: '/openingCeremony',
+    name: 'OpeningCeremony',
+    component: OpeningCeremony,
+    meta: {
+      title: '开幕式'
     }
   }
 ];

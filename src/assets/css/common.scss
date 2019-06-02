@@ -609,3 +609,44 @@
 
 /*报名成功end*/
 
+/*开幕式*/
+
+.openingCeremony-main {
+  width: 100%;
+  background: url('~@/assets/img/opening-ceremony-bg.png') no-repeat;
+  background-size: 100% 100%;
+  min-height: 100vh;
+}
+
+.openingCeremony-title {
+  position: absolute;
+  top: percentage(67/603);
+  left: percentage(38/375);
+  color: #fff;
+
+  .val {
+    line-height: 40px;
+    color: #fff;
+  }
+
+  .val1 {
+    font-size: 24px;
+  }
+
+  .val2 {
+    font-size: 30px;
+  }
+
+  .val3 {
+    font-size: 24px;
+    .blue {
+      color: #00B3FE;
+    }
+  }
+
+  .val4 {
+    font-size: 20px;
+  }
+}
+
+/*开幕式 end*/
