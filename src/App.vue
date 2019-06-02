@@ -7,12 +7,9 @@
         <router-view/>
       </keep-alive>
     </div>
-    <!--<footer class="app-footer">
-      <img
-        class="app-footer-img"
-        src="@/assets/img/zjkbank-logo@2x.png"
-      ><span class="app-footer-inf"></span>
-    </footer>-->
+    <footer class="app-footer">
+     <span class="app-footer-inf">2019中国（青岛）国际软件融合创新博览会<br>www.ciscic.com</span>
+    </footer>
   </div>
 </template>
 

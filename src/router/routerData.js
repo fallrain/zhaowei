@@ -7,6 +7,8 @@ const Navgation = () => import(/* webpackChunkName: "Navgation" */ '@/view/navga
 const Schedule = () => import(/* webpackChunkName: "Schedule" */ '@/view/schedule/Schedule');
 const Introduction = () => import(/* webpackChunkName: "Introduction" */ '@/view/introduction/Introduction');
 const CompanyIntroduction = () => import(/* webpackChunkName: "CompanyIntroduction" */ '@/view/introduction/CompanyIntroduction');
+const Contact = () => import(/* webpackChunkName: "Contact" */ '@/view/contact/Contact');
+const Other = () => import(/* webpackChunkName: "Other" */ '@/view/other/Other');
 
 let data = [
   {
@@ -63,6 +65,30 @@ let data = [
     component: CompanyIntroduction,
     meta: {
       title: '参展企业'
+    }
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact,
+    meta: {
+      title: '联系我们'
+    }
+  },
+  {
+    path: '/other',
+    name: 'Other',
+    component: Other,
+    meta: {
+      title: '敬请期待'
+    }
+  },
+  {
+    path: '/*',
+    name: 'Other',
+    component: Other,
+    meta: {
+      title: '敬请期待'
     }
   }
 ];
