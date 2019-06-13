@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/rbh': {
-        target: 'http://rbh.nonggaogroup.com/',
+        target: 'http://172.20.10.12:10068/',
         changeOrigin: true
       }
     },

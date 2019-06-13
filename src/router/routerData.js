@@ -9,6 +9,7 @@ const Introduction = () => import(/* webpackChunkName: "Introduction" */ '@/view
 const CompanyIntroduction = () => import(/* webpackChunkName: "CompanyIntroduction" */ '@/view/introduction/CompanyIntroduction');
 const Contact = () => import(/* webpackChunkName: "Contact" */ '@/view/contact/Contact');
 const Other = () => import(/* webpackChunkName: "Other" */ '@/view/other/Other');
+const UploadImg = () => import(/* webpackChunkName: "UploadImg" */ '@/view/signUp/UploadImg');
 
 let data = [
   {
@@ -81,6 +82,14 @@ let data = [
     component: Other,
     meta: {
       title: '敬请期待'
+    }
+  },
+  {
+    path: '/uploadImg',
+    name: 'UploadImg',
+    component: UploadImg,
+    meta: {
+      title: '上传'
     }
   },
   {

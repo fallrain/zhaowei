@@ -6,7 +6,8 @@ module.exports = merge(prodEnv, {
   NODE_ENV: '"development"',
   redirect_uri: '"http://hospital.nonggaogroup.com/mobile/wx/redirect/greet"',
   base_url: '"/rbh/"',
+  uploadDomain: '""',
   front_base_url: '"http://hospital.nonggaogroup.com"',
-  app_id:'"wx4b3956842d39bc95"',
+  app_id: '"wx4b3956842d39bc95"',
   back_auth_url: '"http://hospital.nonggaogroup.com/wuye/wx/redirect/greet"'
 })
