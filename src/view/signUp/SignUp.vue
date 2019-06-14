@@ -71,7 +71,7 @@
               :crop="false"
               inputOfFile="file"
               @imageuploaded="imageUploaded"
-              :max-file-size="1024*1024"
+              :max-file-size="1024*1024*5"
               :maxWidth="1280"
               :compress="70"
               extensions="png,jpg,jpeg"
@@ -141,7 +141,7 @@ export default {
     },
     uploadError (res) {
       const errorObj = {
-        'FILE IS TOO LARGER MAX FILE IS': '图片最大不能超过1M'
+        'FILE IS TOO LARGER MAX FILE IS': '图片最大不能超过5M'
       };
       for (let p in errorObj) {
         if (new RegExp(p).test(res)) {
