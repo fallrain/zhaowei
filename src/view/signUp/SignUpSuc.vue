@@ -33,7 +33,10 @@
           以上为您的参会入场二维码。
           入场时需出示给工作人员确认。
         </div>
-        <div class="InformationWallForm-img-par">
+        <div
+          v-if="!hadUpload"
+          class="InformationWallForm-img-par"
+        >
           <span class="name">上传证件照：</span>
           <div
             v-show="form.imgUrl"
@@ -97,6 +100,7 @@ export default {
         qrCodePath: '',
         imgUrl: ''
       },
+      hadUpload: false,
       uploadUrl: '/rbh/document/uploadWithZip'
     };
   },
@@ -109,7 +113,9 @@ export default {
         const data = await this.axPostJson(
           'signUp/saveSignInfo',
           {
-            docId: this.form.imgCode,
+            'headphoto': {
+              docId: this.form.imgCode
+            },
             id: this.form.id
           }
         );
@@ -129,6 +135,7 @@ export default {
         this.form.companyName = content.companyName;
         this.form.userCode = content.userCode;
         this.form.qrCodePath = 'http://rbhmgr.nonggaogroup.com/filetemp/' + content.qrCodePath;
+        this.hadUpload = !!content.picUrl;
       }
     },
     imageUploaded (r) {

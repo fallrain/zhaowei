@@ -250,7 +250,9 @@ export default {
             linkPhone: this.form.linkPhone,
             companyName: this.form.companyName,
             duty: this.form.duty,
-            docId: this.form.imgCode
+            'headphoto': {
+              docId: this.form.imgCode
+            }
           }
         );
         if (data.code === '200') {
