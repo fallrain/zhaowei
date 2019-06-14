@@ -184,10 +184,10 @@ export default {
             maxLength: 10
           },
           filedVals: {
-            'arrayRequired': true
+            // 'arrayRequired': true
           },
           companyVals: {
-            'arrayRequired': true
+            // 'arrayRequired': true
           }
         },
         messages: {
