@@ -65,6 +65,7 @@
             <h-upload></h-upload>
           </vue-core-image-upload>
           <button
+            v-if="!uploaded"
             type="button"
             class="signSuc-upbtn"
             @click="submit"
@@ -101,10 +102,11 @@ export default {
         imgUrl: ''
       },
       hadUpload: false,
+      uploaded: false,
       uploadUrl: '/rbh/document/uploadWithZip'
     };
   },
-  created () {
+  activated () {
     this.getOneSignUpInfo();
   },
   methods: {
@@ -120,8 +122,10 @@ export default {
           }
         );
         if (data.code === '200') {
-          this.$vux.toast({
-            title: '上传证件成功'
+          this.uploaded = true;
+          this.$vux.toast.show({
+            type: 'text',
+            text: '上传证件成功'
           });
         }
       }
